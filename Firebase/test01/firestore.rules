@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{datosUsuarios}/{document=**} {
+      allow read: if true;
+      allow create: if request.resource.data.idemp is string &&
+                     request.resource.data.usuario is string &&
+                     request.resource.data.email is string;
+      allow update: if true;
+      allow delete: if false;
+    }
+    
+    match /{datosZodiaco}/{document=**} {
+      allow read: if true;
+      allow create: if request.resource.data.posic is int &&
+                     request.resource.data.signo is string &&
+                     request.resource.data.rango is string &&
+                     request.resource.data.astro is string &&
+                     request.resource.data.piedra is string &&
+                     request.resource.data.elemento is string &&
+                     request.resource.data.url is string;
+      allow update: if true;
+      allow delete: if false;
+    }
+    
+    match /{datosCSV}/{document=**} {
+      allow read: if true;
+      // Permitir la creación de documentos si los datos son un mapa no vacío
+      allow create: if request.resource.data is map && request.resource.data.size() > 0;
+      allow update, delete: if false;
+    }
+  }
+}

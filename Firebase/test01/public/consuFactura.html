@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen02</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font awesome decoration -->
+    <script
+      src="https://kit.fontawesome.com/2c7bfef965.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/10.5.2/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-auth-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/10.5.2/firebase-database-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.5.2/firebase-firestore-compat.js"
+    ></script>
+
+    <!-- initilized firebase object -->
+    <script defer src="/__/firebase/init.js"></script>
+  </head>
+  <body class="container">
+    <header class="header row">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink_01"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Horoscopo
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink_01"
+                >
+                  <li>
+                    <a class="dropdown-item" href="lista.html">Listar Signos</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="agregar.html"
+                      >Agregar Signo</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink_02"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Usuarios
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink_02"
+                >
+                  <li>
+                    <a class="dropdown-item" href="registrar.html"
+                      >Registrar nuevo usuario</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Otra que se ocurra</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" onclick="salir()"
+                  >Cerrar sesión</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="loadData.html"
+                  >Examen02</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="consuFactura.html"
+                  >Consulta</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="row mt-5">
+      <h1>Consulta de Factura</h1>
+      <form id="formConsultaFactura">
+        <label for="numeroFactura">Número de Factura:</label>
+        <input type="text" id="numeroFactura" name="numeroFactura" />
+        <button type="submit">Consultar</button>
+      </form>
+
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div id="tablaFactura"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="tablaEmpleado"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="row"></footer>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/support/consultaFactura.js"></script>
+  </body>
+</html>
